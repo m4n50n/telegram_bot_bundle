@@ -1,0 +1,9 @@
+# Contributing
+
+The easiest way to contribute is to work on a checkout of your own `telegram-bot-wrapper` fork.
+
+## Pushing
+
+Development is based on the git flow branching model (see http://nvie.com/posts/a-successful-git-branching-model/)
+If you fix a bug please push in hotfix branch.
+If you develop a new feature please create a new branch.
