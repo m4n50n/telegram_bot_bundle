@@ -126,4 +126,22 @@ class TelegramBotConfig implements TelegramBotConfigInterface
     {
         return $this->limiter;
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function serialize(): array
+    {
+        return [
+            'key'      => $this->key,
+            'username' => $this->username,
+            'webhook'  => $this->webhook,
+            'commands' => $this->commands,
+            'admins'   => $this->admins,
+            'mysql'    => $this->mysql,
+            'log'      => $this->log,
+            'paths'    => $this->paths,
+            'limiter'  => $this->limiter,
+        ];
+    }
 }

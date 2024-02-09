@@ -29,6 +29,13 @@ use Monolog\Level;
 interface TelegramBotInterface
 {
     /**
+     * Get the configuration array of the specified bot. 
+     *
+     * @return array
+     */
+    public function getConfig(): array;
+
+    /**
      * Start of the process of creating a new bot instance.
      *
      * @return Telegram The longman/telegram-bot bot object.
