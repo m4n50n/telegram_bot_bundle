@@ -1,0 +1,38 @@
+# telegram_bot:
+#   bots:
+#     my_bot:
+#       # Required #
+#       key: "%env(BOT_KEY)%"
+#       username: "%env(BOT_USERNAME)%"
+
+#       webhook:
+#         url: "%env(BOT_HOOK_URL)%"
+#         max_connections: "%env(BOT_MAX_CONNECTIONS)%"
+
+#       commands:
+#         paths:
+#           - "%env(BOT_COMMANDS_PATH)%"
+
+#       # Optional #
+#       admins:
+#         - 123456789 # Admin user id in Telegram
+
+#       mysql:
+#         enabled: true # false by default
+#         host: mysql
+#         user: "root"
+#         password: "%env(BOT_MYSQL_ROOT_PASSWORD)%"
+#         database: "%env(BOT_MYSQL_DB)%"
+
+#       log:
+#         enabled: true # false by default
+#         debug: "%env(LOG_DEBUG_FILE_PATH)%"
+#         error: "%env(LOG_ERROR_FILE_PATH)%"
+#         update: "%env(LOG_UPDATE_FILE_PATH)%"
+
+#       paths:
+#         download: "%env(DOWNLOADS_PATH)%"
+#         upload: "%env(UPLOADS_PATH)%"
+
+#       limiter:
+#         enabled: true # false by default

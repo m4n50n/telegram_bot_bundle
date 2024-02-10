@@ -34,6 +34,9 @@ final class TelegramBotExtension extends Extension
         $loader = new Loader\PhpFileLoader($container, new FileLocator(__DIR__ . "/../Resources/config"));
         $loader->load("services.php");
 
+        $loader = new Loader\YamlFileLoader($container, new FileLocator(__DIR__ . "/../Resources/config"));
+        $loader->load("telegram_bot.yaml");
+
         $container->setParameter("telegram_bot_bundle.bots", $config["bots"]);
     }
 }
