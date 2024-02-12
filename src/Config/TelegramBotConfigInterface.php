@@ -93,4 +93,11 @@ interface TelegramBotConfigInterface
      * @return array
      */
     public function limiter(): array;
+
+    /**
+     * Serialize the object to an array.
+     *
+     * @return array
+     */
+    public function serialize(): array;
 }
