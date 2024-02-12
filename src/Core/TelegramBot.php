@@ -44,6 +44,14 @@ final class TelegramBot implements TelegramBotInterface
     /**
      * {@inheritDoc}
      */
+    public function getConfig(): array
+    {
+        return $this->config->serialize();
+    }
+
+    /**
+     * {@inheritDoc}
+     */
     public function initialize(): Telegram
     {
         try {
@@ -55,7 +63,7 @@ final class TelegramBot implements TelegramBotInterface
 
             return $this->bot;
         } catch (TelegramException | TelegramLogException | \Exception $exception) {
-            throw new \Exception(sprintf("'%s'", $exception->getMessage()));
+            throw new \Exception(sprintf("%s", $exception->getMessage()));
         }
     }
 
@@ -153,7 +161,7 @@ final class TelegramBot implements TelegramBotInterface
         try {
             $this->bot->handle();
         } catch (TelegramException | \Exception $exception) {
-            throw new \Exception(sprintf("'%s'", $exception->getMessage()));
+            throw new \Exception(sprintf("%s", $exception->getMessage()));
         }
     }
 
@@ -165,7 +173,7 @@ final class TelegramBot implements TelegramBotInterface
         try {
             return $this->bot->setWebhook($this->config->webhook()["url"]);
         } catch (TelegramException | \Exception $exception) {
-            throw new \Exception(sprintf("'%s'", $exception->getMessage()));
+            throw new \Exception(sprintf("%s", $exception->getMessage()));
         }
     }
 
@@ -177,7 +185,7 @@ final class TelegramBot implements TelegramBotInterface
         try {
             return $this->bot->deleteWebhook();
         } catch (TelegramException | \Exception $exception) {
-            throw new \Exception(sprintf("'%s'", $exception->getMessage()));
+            throw new \Exception(sprintf("%s", $exception->getMessage()));
         }
     }
 }
