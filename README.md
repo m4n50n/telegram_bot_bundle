@@ -67,7 +67,18 @@ telegram_bot:
 
     second_bot:
       # ...
+```
 
+If you want the configuration / environment files to be created automatically inside your `/config` folder, you can include my private *Symfony Flex* recipes repository in your `composer.json` by adding the following configuration:
+```json
+"extra": {
+  "symfony": {
+      "endpoint": [
+          "https://api.github.com/repos/m4n50n/symfony_flex_recipes/contents/index.json",
+          "flex://defaults"
+      ]
+  }
+}
 ```
 
 ## Usage
