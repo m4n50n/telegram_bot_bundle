@@ -39,4 +39,14 @@ final class TelegramBotFactory implements TelegramBotFactoryInterface
 
         return new TelegramBot(new TelegramBotConfig($this->botsConfig[$botName]));
     }
+
+    /**
+     * {@inheritDoc}
+     */
+    public function getAll(): array
+    {
+        return array_map(function ($config) {
+            return new TelegramBot(new TelegramBotConfig($config));
+        }, $this->botsConfig);
+    }
 }
