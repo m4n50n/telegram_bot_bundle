@@ -50,8 +50,8 @@ telegram_bot:
         - 123456789 # Admin user id in Telegram
       mysql:
         enabled: true # false by default
-        host: mysql
-        user: "root"
+        host: "%env(BOT_MYSQL_HOST)%"
+        user: "%env(BOT_MYSQL_USER)%"
         password: "%env(BOT_MYSQL_ROOT_PASSWORD)%"
         database: "%env(BOT_MYSQL_DB)%"
       log:
@@ -96,14 +96,14 @@ use M4n50n\TelegramBotBundle\Factory\TelegramBotFactory;
 
 final class TelegramBotService
 {
-    public function __construct(private TelegramBotFactory $factory)
+    public function __construct(private TelegramBotFactory $botFactory)
     {
     }
 
     public function initialize(string $botName)
     {
         // ...
-        return $this->factory->get($botName);        
+        return $this->botFactory->get($botName);        
     }
 }
 ```

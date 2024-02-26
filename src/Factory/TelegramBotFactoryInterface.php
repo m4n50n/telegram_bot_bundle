@@ -23,7 +23,14 @@ interface TelegramBotFactoryInterface
     /**
      * Get an instance of the specified bot.
      *
-     * @param string $botName The name of the bot to initialize 
+     * @param string $botName The name of the bot to initialize. 
      */
     public function get(string $botName): TelegramBot;
+
+    /**
+     * Get an array of instances of all bots.
+     *
+     * @return TelegramBot[] Array of TelegramBot instances.
+     */
+    public function getAll(): array;
 }
